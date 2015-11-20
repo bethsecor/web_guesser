@@ -4,7 +4,7 @@
       body {
         <% if result == "Way too high!" || result == "Way too low!" %>
         background: red;
-        <% elsif result == "Too high!" || result == "Too low!"%>
+        <% elsif result == "Too high!" || result == "Too low!" %>
         background: pink;
         <% else %>
         background: green;
@@ -18,7 +18,7 @@
       <input type='submit' value='Guess!' />
     </form>
     <p>
-      <%= result %>
+      <%= message %>
     </p>
   </body>
 </html>

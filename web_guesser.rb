@@ -19,9 +19,19 @@ def check_result(guess)
   end
 end
 
+def add_cheat?(cheat)
+  if cheat == "true"
+    " The SECRET NUMBER is #{SECRET_NUMBER}."
+  else
+    ""
+  end
+end
+
 get '/' do
   guess = params["guess"]
+  cheat = params.fetch("cheat", "false")
   result = check_result(guess)
+  message = result + add_cheat?(cheat)
   erb :index, :locals => {:secret_number => SECRET_NUMBER,
-                          :result => result}
+                          :result => result, :message => message}
 end
