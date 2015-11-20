@@ -1,8 +1,24 @@
 <html>
-  <head></head>
+  <head>
+  <style>
+      body {
+        <% if result == "Way too high!" || result == "Way too low!" %>
+        background: red;
+        <% elsif result == "Too high!" || result == "Too low!"%>
+        background: pink;
+        <% else %>
+        background: green;
+        <% end %>
+      }
+    </style>
+  </head>
   <body>
+    <form>
+      <input type='text' name='guess' />
+      <input type='submit' value='Guess!' />
+    </form>
     <p>
-    The SECRET NUMBER is <%= random_number %>
+      <%= result %>
     </p>
   </body>
 </html>
